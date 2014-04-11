@@ -3,10 +3,12 @@
 DOTFILES=$(dirname $0)
 
 backup() {
-  if [ -f $1 ] && [ ! -h $1 ]; then
-    cp $1 $1.orig
+  if [ -f $1 ]; then
+    if [ ! -h $1 ]; then
+      cp $1 $1.orig
+    fi
+    rm $1
   fi
-  rm $1
 }
 
 conditional_clone() {
