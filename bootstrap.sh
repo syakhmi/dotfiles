@@ -3,16 +3,16 @@
 DOTFILES="$(dirname "$0")"
 
 backup() {
-	if [ -d $1 ]; then
-		cp $1 $1.orig
-	fi
-	rm $1
+  if [ -d $1 ]; then
+    cp $1 $1.orig
+  fi
+  rm $1
 }
 
 conditional_clone() {
-	if [ ! -d $2 ]; then
-		git clone $1 $2
-	fi
+  if [ ! -d $2 ]; then
+    git clone $1 $2
+  fi
 }
 
 ####################################
