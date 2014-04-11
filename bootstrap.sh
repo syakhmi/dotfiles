@@ -12,8 +12,6 @@ fi
 backup() {
   if [ -f $1 ] && [ ! -h $1 ]; then
     cp $1 $1.orig
-  fi
-  if [ -f $1 ] || [ -h $1 ]; then
     rm $1
   fi
 }
@@ -24,13 +22,19 @@ conditional_clone() {
   fi
 }
 
+relink() {
+  if [ -h $2 ]; then
+    rm $2
+  fi
+  ln -s $1 $2
+}
+
 ####################################
 ############### BASH ###############
 ####################################
 
 backup ~/.bashrc
-ln -s $DOTFILES/bashrc ~/.bashrc
-echo $DOTFILES
+relink $DOTFILES/bashrc ~/.bashrc
 
 ####################################
 ############### ZSH ################
@@ -39,5 +43,7 @@ echo $DOTFILES
 conditional_clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 conditional_clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
 
+relink $DOTFILES/sahil.zsh-theme ~/.oh-my-zsh/themes/sahil.zsh-theme
+
 backup ~/.zshrc
-ln -s $DOTFILES/zshrc ~/.zshrc
+relink $DOTFILES/zshrc ~/.zshrc
