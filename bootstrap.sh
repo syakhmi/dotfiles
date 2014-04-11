@@ -1,6 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-DOTFILES="$(dirname "$0")"
+DOTFILES=$(dirname $0)
 
 backup() {
   if [ -d $1 ]; then
