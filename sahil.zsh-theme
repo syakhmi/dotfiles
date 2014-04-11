@@ -18,7 +18,7 @@ theme_precmd() {
 }
 
 setopt prompt_subst
-PROMPT=$'$FG[028]%2c%B$FG[091]${vcs_info_msg_0_} $%{$reset_color%} '
+PROMPT=$'%B$FG[028]%2c%B$FG[091]${vcs_info_msg_0_} $%{$reset_color%} '
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   RPROMPT='%B%F{blue}%m%{$reset_color%}'
 fi
