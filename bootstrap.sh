@@ -1,12 +1,19 @@
 #!/bin/bash
 
 DOTFILES=$(dirname $0)
+if [[ $DOTFILES != /* ]]; then
+  if [ $DOTFILES == "." ]; then
+    DOTFILES=$(pwd)
+  else
+    DOTFILES=$(pwd)/$DOTFILES
+  fi
+fi
 
 backup() {
-  if [ -f $1 ]; then
-    if [ ! -h $1 ]; then
-      cp $1 $1.orig
-    fi
+  if [ -f $1 ] && [ ! -h $1 ]; then
+    cp $1 $1.orig
+  fi
+  if [ -f $1 ] || [ -h $1 ]; then
     rm $1
   fi
 }
@@ -23,6 +30,7 @@ conditional_clone() {
 
 backup ~/.bashrc
 ln -s $DOTFILES/bashrc ~/.bashrc
+echo $DOTFILES
 
 ####################################
 ############### ZSH ################
