@@ -3,7 +3,7 @@
 DOTFILES=$(dirname $0)
 
 backup() {
-  if [ -d $1 ]; then
+  if [ -f $1 ] && [ ! -h $1 ]; then
     cp $1 $1.orig
   fi
   rm $1
