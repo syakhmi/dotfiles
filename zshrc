@@ -101,5 +101,6 @@ alias bx="bundle exec"
 alias bxr="bundle exec rails"
 alias sgb="setup_git_branch"
 export PATH=~/.cabal/bin:$PATH
+export EDITOR=/usr/bin/nano
 
 setopt hist_ignore_dups share_history inc_append_history extended_history
