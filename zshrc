@@ -92,15 +92,6 @@ bindkey '^T' autosuggest-toggle
 ########## Sahil's Stuff ###########
 ####################################
 
-function setup_git_branch {
-  git push origin master:$1
-  git checkout --track -b $1 origin/$1
-}
-
-alias bx="bundle exec"
-alias bxr="bundle exec rails"
-alias sgb="setup_git_branch"
-export PATH=~/.cabal/bin:$PATH
-export EDITOR=/usr/bin/nano
-
 setopt hist_ignore_dups share_history inc_append_history extended_history
+
+source ~/.dotfiles/bashzshrc
