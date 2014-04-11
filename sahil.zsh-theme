@@ -19,7 +19,9 @@ theme_precmd() {
 
 setopt prompt_subst
 PROMPT=$'%B%F{green}%2c%B%F{magenta}${vcs_info_msg_0_} $%{$reset_color%} '
-RPROMPT='%B%F{blue}%m'
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  RPROMPT='%B%F{blue}%m'
+fi
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd  theme_precmd
