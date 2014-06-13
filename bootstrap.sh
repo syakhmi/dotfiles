@@ -24,7 +24,5 @@ relink $DOTFILES/bashrc ~/.bashrc
 ############### ZSH ################
 ####################################
 
-relink $DOTFILES/sahil.zsh-theme ~/.oh-my-zsh/themes/sahil.zsh-theme
-
 backup ~/.zshrc
 relink $DOTFILES/zshrc ~/.zshrc
