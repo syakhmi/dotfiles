@@ -9,7 +9,9 @@ backup() {
 
 conditional_clone() {
   if [ ! -d $2 ]; then
-    git clone $1 $2
+    git clone $1 $2;
+  elif [ -d $2/.git ]; then
+    ( cd $2 ; git pull )
   fi
 }
 
