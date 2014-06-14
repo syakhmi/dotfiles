@@ -7,16 +7,8 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
-function setup_git_branch {
-  git push origin master:$1
-  git checkout --track -b $1 origin/$1
-}
-function transform_user {
-  user=$(whoami)
-  echo "${user/syakhmi/me}"
-}
 
-export PS1='\[\e[35m\]$(transform_user):\[\e[32m\]\W\[\e[36m\]$(parse_git_branch)\$\[\e[0m\] '
+export PS1='\[$(tput bold)\]\[\e[38;05;28m\]\W\[\e[38;05;91m\]$(parse_git_branch) \$\[\e[0m\] '
 
 # History #
 
