@@ -7,6 +7,14 @@ backup() {
   fi
 }
 
+check_status() {
+  if [ $? -ne 0 ]; then exit 1; fi
+}
+
+command_exists() {
+  type "$1" &> /dev/null
+}
+
 conditional_clone() {
   if [ ! -d $2 ]; then
     git clone $1 $2;

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DOTFILES=$(dirname $0)
 if [[ $DOTFILES != /* ]]; then
   if [ $DOTFILES == "." ]; then
@@ -10,8 +12,7 @@ if [[ $DOTFILES != /* ]]; then
 fi
 
 source "$DOTFILES/utils.sh"
-
-sh "$DOTFILES/dependencies.sh"
+source "$DOTFILES/dependencies.sh"
 
 ####################################
 ############### BASH ###############

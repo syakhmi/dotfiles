@@ -1,3 +1,5 @@
+source ~/.dotfiles/bashzshrc
+
 # Customize the shell prompt to include the current checked-out branch and dirty status:
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
@@ -26,5 +28,3 @@ export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-
-source ~/.dotfiles/bashzshrc
