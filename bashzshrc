@@ -25,7 +25,6 @@ alias bxr="bundle exec rails"
 alias sgb="setup_git_branch"
 
 if [[ $(uname) == 'Linux' ]]; then
-  alias subl=/usr/bin/sublime
   alias open=gnome-open
 fi
 
