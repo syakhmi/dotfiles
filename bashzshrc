@@ -8,6 +8,10 @@ if [[ -d ~/.cabal ]]; then
   export PATH=~/.cabal/bin:$PATH
 fi
 
+if [[ -d ~/.root/bin ]]; then
+  export PATH=~/.root/bin:$PATH
+fi
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
