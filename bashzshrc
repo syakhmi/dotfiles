@@ -12,6 +12,7 @@ if [[ -d ~/.cabal ]]; then
   export PATH=~/.cabal/bin:$PATH
 fi
 
+
 if [[ -d ~/.root ]]; then
   export PATH=~/.root/bin:$PATH
   export DYLD_LIBRARY_PATH=~/.root/lib:$DYLD_LIBRARY_PATH
@@ -40,7 +41,6 @@ alias bxr="bundle exec rails"
 alias sgb="setup_git_branch"
 
 if [[ $(uname) == 'Linux' ]]; then
-  alias subl=/usr/bin/sublime
   alias open=gnome-open
 fi
 
