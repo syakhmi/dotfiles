@@ -40,3 +40,5 @@ bindkey '^T' autosuggest-toggle
 # bind UP and DOWN arrow keys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

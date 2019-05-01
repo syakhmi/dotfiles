@@ -4,9 +4,24 @@ if [[ -d ~/.rvm ]]; then
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+if [[ -d ~/anaconda/bin ]]; then
+  export PATH=~/anaconda/bin:$PATH
+fi
+
 if [[ -d ~/.cabal ]]; then
   export PATH=~/.cabal/bin:$PATH
 fi
+
+if [[ -d ~/.root ]]; then
+  export PATH=~/.root/bin:$PATH
+  export DYLD_LIBRARY_PATH=~/.root/lib:$DYLD_LIBRARY_PATH
+fi
+
+if [[ -d ~/Development/google-cloud-sdk ]]; then
+  export PATH=~/Development/google-cloud-sdk/bin:$PATH
+  export DYLD_LIBRARY_PATH=~/.root/lib:$DYLD_LIBRARY_PATH
+fi
+
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
