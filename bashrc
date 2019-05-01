@@ -20,5 +20,3 @@ export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
