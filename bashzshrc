@@ -4,8 +4,8 @@ if [[ -d ~/.rvm ]]; then
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
-if [[ -d ~/anaconda/bin ]]; then
-  export PATH=~/anaconda/bin:$PATH
+if [[ -d ~/anaconda3/bin ]]; then
+  export PATH=~/anaconda3/bin:$PATH
 fi
 
 if [[ -d ~/.cabal ]]; then

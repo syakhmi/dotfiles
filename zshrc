@@ -25,3 +25,5 @@ setopt hist_ignore_dups share_history inc_append_history extended_history
 # bind UP and DOWN arrow keys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+
