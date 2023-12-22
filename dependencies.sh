@@ -32,9 +32,9 @@ if ! command_exists zsh; then
   fi
 fi
 
-conditional_clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-conditional_clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-conditional_clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-conditional_clone https://github.com/tarruda/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+conditional_clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+conditional_clone git@github.com:zsh-users/zsh-history-substring-search.git ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+conditional_clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+conditional_clone git@github.com:tarruda/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 relink $DOTFILES/sahil.zsh-theme ~/.oh-my-zsh/themes/sahil.zsh-theme
